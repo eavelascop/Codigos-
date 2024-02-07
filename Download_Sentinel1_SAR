@@ -1,4 +1,18 @@
+//crea la geometria del area de estudio con las coordenadas, u opcionalmente crea un poligono en la interfaz de GEE denominado geometry y comenta o borra hasta la linea 12
+
+var coordinates = [
+   [-3.0093165997753646,37.09212622367329],
+   [-2.1551295880566146,37.09212622367329],
+   [-2.1551295880566146,37.49417036487973],
+   [-3.0093165997753646,37.49417036487973],
+   [-3.0093165997753646,37.09212622367329]
+   ];
+
+// Crea un objeto ee.Geometry.Polygon
+var geometry = ee.Geometry.Polygon(coordinates);
+
 // Load the Sentinel-1 ImageCollection, filter to Jun-Sep 2015 observations.
+
 var sentinel1 = ee.ImageCollection('COPERNICUS/S1_GRD')
                     .filterDate('2015-04-01','2015-06-30')
                     .filterBounds(geometry);
