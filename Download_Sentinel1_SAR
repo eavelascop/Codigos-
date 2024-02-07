@@ -1,3 +1,7 @@
+//script path:https://code.earthengine.google.com/?scriptPath=users%2Feavelascop1%2Feavelascop%3ASENTINEL1
+
+// codigo para la obtencion de imagenes SAR (c-band) Sentinel 1
+
 //crea la geometria del area de estudio con las coordenadas, u opcionalmente crea un poligono en la interfaz de GEE denominado geometry y comenta o borra hasta la linea 12
 
 var coordinates = [
@@ -11,6 +15,7 @@ var coordinates = [
 // Crea un objeto ee.Geometry.Polygon
 var geometry = ee.Geometry.Polygon(coordinates);
 
+//se puede modificar el periodo de obtencion de las imagenes segun necesidades, en nuestro caso utilizamos meses abril a junio.
 // Load the Sentinel-1 ImageCollection, filter to Jun-Sep 2015 observations.
 
 var sentinel1 = ee.ImageCollection('COPERNICUS/S1_GRD')
@@ -55,7 +60,7 @@ Map.addLayer(vvIwAscDescMean, {min: -12, max: -4}, 'vvIwAscDescMean');
 Map.addLayer(vvIwAscMean, {min: -18, max: -10}, 'vvIwAscMean');
 Map.addLayer(vvIwDescMean, {min: -18, max: -10}, 'vvIwDescMean');
 
-
+//Aplicamos un filtro para evitar el moteado o "SPECKLE" caracteristico de las imagenes SAR
 //Apply filter to reduce speckle
 var SMOOTHING_RADIUS = 50;
 var vhIwAscDescMean = vhIwAscDescMean.focal_mean(SMOOTHING_RADIUS, 'circle', 'meters');
