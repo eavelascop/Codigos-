@@ -94,70 +94,8 @@ parcelas<-parcelas[-which(parcelas$Ctt_MC.==0),]
 
 
 hist(parcelas$Ctt_MC.)
+``````
 
-#  Boxplot(parcelas$Ho_m)
-#  outliners <- boxplot(parcelas$Ho_m)$out
-#  outliners
-#  
-#  parcelas<-subset.data.frame(parcelas, parcelas$Ho_m<=17.28442)
-#  
-#  Boxplot(parcelas$Ho_m)
-#  
-#  Boxplot(parcelas$Dmc_cm)
-#  
-#  parcelas<-parcelas[-c(607,1305,1192),]
-#  summary(parcelas$Dmc_cm)
-#  outliners <- boxplot(parcelas$Dmc_cm)$out
-#  outliners
-#  
-#  parcelas<-subset.data.frame(parcelas, parcelas$Dmc_cm<=34.80002)
-#  Boxplot(parcelas$Dmc_cm)
-#  
-#  
-#  Boxplot(parcelas$Npies_h)
-#  summary(parcelas$Npies_h)
-#  outliners <- boxplot(parcelas$Npies_h)$out
-#  outliners
-#  
-#  parcelas<-subset.data.frame(parcelas, parcelas$Npies_h<=1614)
-#  
-#  Boxplot(parcelas$AB_m2_h)
-#  
-#  summary(parcelas$AB_m2_h)
-#  outliners <- boxplot(parcelas$AB_m2_h)$out
-#  outliners
-#  parcelas<-subset.data.frame(parcelas, parcelas$AB_m2_h<=55.14974)
-#  
-# 
-#  Boxplot(parcelas$Npies_h)
-#  Boxplot(parcelas$Ctt_MC.)
-#  Boxplot(parcelas$AB_m2_h)
-#  
-#  which(parcelas$Ho_m==0)
-#  which(parcelas$Npies_h_cm==0)
-#  which(parcelas$Npies_h==0)
-#  which(parcelas$Ctt_MC.==0)
-#  which(parcelas$AB_m2_h==0)
-#  
-# #plot((parcelas$Npies_h_cm^2)*(parcelas$Npies_h),parcelas$AB_m2_h)
-#  
-#  plot(parcelas$Ctt_MC.,
-# parcelas$Ho_m*parcelas$AB_m2_h)#relaciones basadas en spp?
-#  
-#  plot(parcelas$Ctt_MC.,
-#       parcelas$Ho_m*parcelas$AB_m2_h,
-#       col=as.factor(parcelas$N_Cintf))#Relaciones basadas en spp
-#  
-#  plot(parcelas$Npies_h_cm,parcelas$Dmc_cm)
-#  
-#  plot((parcelas$Ctt_MC.),
-#       (parcelas$Ho_m*(parcelas$Dmc_cm^2)*(parcelas$Dmc_cm/parcelas$Npies_h_cm)),
-#       col=as.factor(parcelas$N_Cintf))
-#  
-#  plot((parcelas$Ctt_MC.),
-#       (parcelas$Ho_m*(parcelas$Npies_h_cm^2)*parcelas$Npies_h),
-#       col=as.factor(parcelas$N_Cintf))
-```
 
 ```{r}
 
