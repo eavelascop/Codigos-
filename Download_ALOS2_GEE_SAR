@@ -1,3 +1,18 @@
+
+//crea la geometria del area de estudio con las coordenadas, u opcionalmente crea un poligono en la interfaz de GEE denominado geometry y comenta o borra las siguienetes lineas
+
+var coordinates = [
+   [-3.0093165997753646,37.09212622367329],
+   [-2.1551295880566146,37.09212622367329],
+   [-2.1551295880566146,37.49417036487973],
+   [-3.0093165997753646,37.49417036487973],
+   [-3.0093165997753646,37.09212622367329]
+   ];
+
+// Crea un objeto ee.Geometry.Polygon
+var geometry = ee.Geometry.Polygon(coordinates);
+
+
 Map.addLayer(geometry);
 Map.centerObject(geometry,11);
 var SMOOTHING_RADIUS = 50;
@@ -39,44 +54,6 @@ Export.image.toDrive({
   region: geometry,
   maxPixels: 1113892470,
   folder:'ALOS_15_SPK'
-});
-
-
-//2020
-
-var ALOS2_2020 = ee.ImageCollection("JAXA/ALOS/PALSAR/YEARLY/SAR")
-.filter(ee.Filter.date('2020-01-01', '2021-01-01')).mosaic();
-var sarHV_2020 = ALOS2_2020.select('HV');
-var sarHH_2020 = ALOS2_2020.select('HH');
-
-//Apply filter to reduce speckle
-
-var sarHV_2020_f = sarHV_2020.focal_mean(SMOOTHING_RADIUS, 'circle', 'meters');
-var sarHH_2020_f = sarHH_2020.focal_mean(SMOOTHING_RADIUS, 'circle', 'meters');
-
-Map.addLayer(sarHV_2020_f, {color: '006600', strokeWidth: 8}, "HV_2020", true);
-Map.addLayer(sarHH_2020_f, {color: '006600', strokeWidth: 8}, "HH_2020", true);
-
-print(sarHV_2020_f);
-print(ALOS2_2020);
-// Export the image, specifying scale and region.
-Export.image.toDrive({
-  image: sarHV_2020_f,
-  description: 'HV_2020',
-  scale: 25,
-  region: geometry,
-  maxPixels: 1113892470,
-  folder:'ALOS_20_SPK'
-});
-
-// Export the image, specifying scale and region.
-Export.image.toDrive({
-  image: sarHH_2020_f,
-  description: 'HH_2020',
-  scale: 25,
-  region: geometry,
-  maxPixels: 1113892470,
-  folder:'ALOS_20_SPK'
 });
 
 
