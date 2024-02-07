@@ -1,5 +1,7 @@
+//script path: https://code.earthengine.google.com/?scriptPath=users%2Feavelascop1%2Feavelascop%3AALOS_2%20Download
+// codigo para la obtencion de imagenes SAR (L-band) ALOS PALSAR 2
 
-//crea la geometria del area de estudio con las coordenadas, u opcionalmente crea un poligono en la interfaz de GEE denominado geometry y comenta o borra las siguienetes lineas
+//crea la geometria del area de estudio con las coordenadas, u opcionalmente crea un poligono en la interfaz de GEE denominado geometry y comenta o borra hasta la linea 15
 
 var coordinates = [
    [-3.0093165997753646,37.09212622367329],
