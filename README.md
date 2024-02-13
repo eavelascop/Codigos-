@@ -314,7 +314,7 @@ hist(parcelas$Ctt_MC.)
 
 ![](ejemplo_RADAR_2_files/figure-html/unnamed-chunk-9-5.png)<!-- -->
 
-#Dem Alos world 3d
+# Dem Alos world 3d
 
 Ahora vamos a cargar el DEM derivado del la colección ALOS World 3D - 30m (AW3D30), la cual es un conjunto de datos de modelo de superficie digital (DSM) global con una resolución horizontal de aproximadamente 30 metros (malla de 1 arco segundo).
 
