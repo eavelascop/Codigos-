@@ -979,11 +979,16 @@ summary(test_PP)
 ```
 
 ```r
-fitControl <- trainControl(method = "repeatedcv", number=10, repeats=5,
-                              #classProbs = TRUE,
-                              returnResamp="all",
-                              returnData = TRUE,
-                              savePredictions=TRUE)
+# Definición de parámetros de control para entrenamiento de modelo con caret
+fitControl <- trainControl(
+  method = "repeatedcv",  # Método de validación cruzada: validación cruzada repetida
+  number = 10,            # Número de pliegues en la validación cruzada: 10
+  repeats = 5,            # Número de repeticiones de la validación cruzada: 5
+  returnResamp = "all",   # Devolver todas las métricas de evaluación para cada repetición
+  returnData = TRUE,      # Devolver datos originales junto con predicciones del modelo
+  savePredictions = TRUE  # Guardar las predicciones del modelo
+)
+
 ```
 
 
